@@ -74,7 +74,7 @@
             // 
             this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(100, 136);
+            this.button1.Location = new System.Drawing.Point(100, 142);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(94, 34);
             this.button1.TabIndex = 4;

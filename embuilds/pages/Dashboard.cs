@@ -16,5 +16,38 @@ namespace embuilds.pages
         {
             InitializeComponent();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //private void Products_Click(object sender, EventArgs e)
+        //{
+        //    Products products = new Products();
+        //    products.Show();
+        //    this.Hide();
+        //}
+
+        private void btnInventory_Click(object sender, EventArgs e)
+        {
+            Inventory inventory = new Inventory();
+            inventory.Show();
+            this.Hide();
+        }
+
+        private void btnProducts_Click(object sender, EventArgs e)
+        {
+            Products products = new Products();
+            products.Show();
+            this.Hide();
+        }
+
+        private void btnPOS_click(object sender, EventArgs e)
+        {
+            POS pos = new POS();
+            pos.Show();
+            this.Hide();
+        }
     }
 }
