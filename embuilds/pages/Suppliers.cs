@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace embuilds.pages
 {
-    public partial class POS : Form
+    public partial class Suppliers : Form
     {
-        public POS()
+        public Suppliers()
         {
             InitializeComponent();
         }

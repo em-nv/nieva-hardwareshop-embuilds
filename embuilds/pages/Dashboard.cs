@@ -17,11 +17,6 @@ namespace embuilds.pages
             InitializeComponent();
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
-
         //private void Products_Click(object sender, EventArgs e)
         //{
         //    Products products = new Products();
@@ -63,6 +58,43 @@ namespace embuilds.pages
         private void button7_Click(object sender, EventArgs e)
         {
 
+        }
+
+
+        private void Dashboard_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonSuppliers_Click(object sender, EventArgs e)
+        {
+            Suppliers suppliers = new Suppliers();
+            suppliers.Show();
+            this.Hide();
+        }
+
+        private void btnSales_Click(object sender, EventArgs e)
+        {
+            Sales sales = new Sales();
+            sales.Show();
+            this.Hide();
+        }
+
+        private void btnCustomers_Click(object sender, EventArgs e)
+        {
+            Customers customers = new Customers();
+            customers.Show();
+            this.Hide();
         }
     }
 }
