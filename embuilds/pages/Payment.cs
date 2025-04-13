@@ -10,24 +10,22 @@ using System.Windows.Forms;
 
 namespace embuilds.pages
 {
-    public partial class POS : Form
+    public partial class Payment : Form
     {
-        public POS()
+        public Payment()
         {
             InitializeComponent();
         }
 
-        private void btnBack_Click(object sender, EventArgs e)
+        private void label2_Click(object sender, EventArgs e)
         {
-            Dashboard dashboard = new Dashboard();
-            dashboard.Show();
-            this.Hide();
+
         }
 
-        private void btnCharge_Click(object sender, EventArgs e)
+        private void BtnPaid_Click(object sender, EventArgs e)
         {
-            Payment payment = new Payment();
-            payment.Show();
+            POS pos = new POS();
+            pos.Show();
             this.Hide();
         }
     }
