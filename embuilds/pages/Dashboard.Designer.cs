@@ -43,8 +43,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.Products = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.button7 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -230,18 +230,6 @@
             this.label1.Text = "EMBuilds";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(566, 17);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(105, 21);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Admin Name";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
             // label3
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -253,14 +241,23 @@
             this.label3.TabIndex = 10;
             this.label3.Text = "Mon. 09/09/2025 9:00am";
             // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(611, 17);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(60, 23);
+            this.button7.TabIndex = 11;
+            this.button7.Text = "Logout";
+            this.button7.UseVisualStyleBackColor = true;
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(698, 530);
+            this.Controls.Add(this.button7);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MaximizeBox = false;
@@ -289,7 +286,6 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label3;
@@ -298,5 +294,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button button7;
     }
 }
