@@ -43,7 +43,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.Products = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.button7 = new System.Windows.Forms.Button();
+            this.dashboardLogout = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -230,14 +230,15 @@
             this.label3.TabIndex = 10;
             this.label3.Text = "Mon. 09/09/2025 9:00am";
             // 
-            // button7
+            // dashboardLogout
             // 
-            this.button7.Location = new System.Drawing.Point(611, 17);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(60, 23);
-            this.button7.TabIndex = 11;
-            this.button7.Text = "Logout";
-            this.button7.UseVisualStyleBackColor = true;
+            this.dashboardLogout.Location = new System.Drawing.Point(611, 17);
+            this.dashboardLogout.Name = "dashboardLogout";
+            this.dashboardLogout.Size = new System.Drawing.Size(60, 23);
+            this.dashboardLogout.TabIndex = 11;
+            this.dashboardLogout.Text = "Logout";
+            this.dashboardLogout.UseVisualStyleBackColor = true;
+            this.dashboardLogout.Click += new System.EventHandler(this.dashboardLogout_Click);
             // 
             // pictureBox1
             // 
@@ -255,7 +256,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(698, 530);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.button7);
+            this.Controls.Add(this.dashboardLogout);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -293,7 +294,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button dashboardLogout;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

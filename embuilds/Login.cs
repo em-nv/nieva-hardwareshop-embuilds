@@ -25,11 +25,6 @@ namespace embuilds
 
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void label3_Click(object sender, EventArgs e)
         {
 
@@ -42,9 +37,53 @@ namespace embuilds
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            Dashboard dashboard = new Dashboard();
-            dashboard.Show();
-            this.Hide();
+            string username = txtUsername.Text.Trim();
+            string password = txtPassword.Text.Trim();
+
+            conn_DB db = new conn_DB();
+
+            if (db.ValidateLogin(username, password))
+            {
+                MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Dashboard dashboard = new Dashboard();
+                dashboard.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Invalid username or password.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Login_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            // Display confirmation dialog only when the user tries to close the form manually
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                var answer = MessageBox.Show("Do you want to close the application?", "Exit Application", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                // Check the user's response
+                if (answer == DialogResult.Yes)
+                {
+                    // User chose Yes, proceed with closing the application
+                    Application.Exit();
+                }
+                else
+                {
+                    // User chose No, cancel the close action
+                    e.Cancel = true;
+                }
+            }
         }
     }
 }
