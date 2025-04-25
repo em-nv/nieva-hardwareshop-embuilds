@@ -85,5 +85,12 @@ namespace embuilds
                 }
             }
         }
+
+        private void linkLabel1_ForgotPasswordClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            ForgotPassword forgotPasswordForm = new ForgotPassword();
+            forgotPasswordForm.Show();
+            this.Hide();
+        }
     }
 }

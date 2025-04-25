@@ -42,7 +42,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.Products = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
+            this.dateAndTime = new System.Windows.Forms.Label();
             this.dashboardLogout = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
@@ -219,16 +219,16 @@
             this.Products.UseVisualStyleBackColor = true;
             this.Products.Click += new System.EventHandler(this.btnProducts_Click);
             // 
-            // label3
+            // dateAndTime
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(279, 23);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(137, 15);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "Mon. 09/09/2025 9:00am";
+            this.dateAndTime.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dateAndTime.AutoSize = true;
+            this.dateAndTime.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateAndTime.Location = new System.Drawing.Point(314, 23);
+            this.dateAndTime.Name = "dateAndTime";
+            this.dateAndTime.Size = new System.Drawing.Size(10, 15);
+            this.dateAndTime.TabIndex = 10;
+            this.dateAndTime.Text = " ";
             // 
             // dashboardLogout
             // 
@@ -257,13 +257,14 @@
             this.ClientSize = new System.Drawing.Size(698, 530);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dashboardLogout);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.dateAndTime);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MaximizeBox = false;
             this.Name = "Dashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dashboard";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Dashboard_FormClosing);
             this.Load += new System.EventHandler(this.Dashboard_Load);
             this.groupBox1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -288,7 +289,7 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label dateAndTime;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label4;

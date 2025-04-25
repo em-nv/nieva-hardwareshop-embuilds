@@ -60,11 +60,20 @@ namespace embuilds.pages
 
         }
 
-
+        private Timer dateTimeTimer;
         private void Dashboard_Load(object sender, EventArgs e)
         {
-
+            dateTimeTimer = new Timer();
+            dateTimeTimer.Interval = 1000; // 1 second
+            dateTimeTimer.Tick += UpdateDateTime;
+            dateTimeTimer.Start();
         }
+
+        private void UpdateDateTime(object sender, EventArgs e)
+        {
+            dateAndTime.Text = DateTime.Now.ToString("dddd, dd/MM/yyyy hh:mm:ss tt");
+        }
+
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -105,6 +114,27 @@ namespace embuilds.pages
                 Login loginForm = new Login();
                 loginForm.Show();
                 this.Hide();
+            }
+        }
+
+        private void Dashboard_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            // Display confirmation dialog only when the user tries to close the form manually
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                var answer = MessageBox.Show("Do you want to close the application?", "Exit Application", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                // Check the user's response
+                if (answer == DialogResult.Yes)
+                {
+                    // User chose Yes, proceed with closing the application
+                    Application.Exit();
+                }
+                else
+                {
+                    // User chose No, cancel the close action
+                    e.Cancel = true;
+                }
             }
         }
     }
