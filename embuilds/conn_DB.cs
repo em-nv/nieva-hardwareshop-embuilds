@@ -78,5 +78,32 @@ namespace embuilds
             return dt;
         }
 
+        // get all products
+        public DataTable GetAllProducts()
+        {
+            DataTable dt = new DataTable();
+            using (var conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+                var query = @"
+                    SELECT p.id, 
+                            p.name AS `Product Name`, 
+                            p.description AS `Description`, 
+                            c.name AS `Category`, 
+                            s.name AS `Supplier`, 
+                             CONCAT('Php ', FORMAT(p.price, 2)) AS `Price`
+                    FROM products p
+                    JOIN categories c ON p.category_id = c.id
+                    JOIN suppliers s ON p.supplier_id = s.id";
+
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                adapter.Fill(dt);
+                conn.Close();
+
+            }
+            return dt;
+        }
+
     }
 }

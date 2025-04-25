@@ -28,5 +28,12 @@ namespace embuilds.pages
         {
 
         }
+
+        private void frmProductList_Load(object sender, EventArgs e)
+        {
+            var conn_db = new conn_DB();
+            dataGridProducts.DataSource = conn_db.GetAllProducts();
+            dataGridProducts.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        }
     }
 }

@@ -35,7 +35,6 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -45,6 +44,9 @@
             this.dateAndTime = new System.Windows.Forms.Label();
             this.dashboardLogout = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -57,8 +59,10 @@
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.panel1);
+            this.groupBox1.Controls.Add(this.button8);
+            this.groupBox1.Controls.Add(this.button7);
             this.groupBox1.Controls.Add(this.button6);
+            this.groupBox1.Controls.Add(this.panel1);
             this.groupBox1.Controls.Add(this.button5);
             this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.button3);
@@ -67,7 +71,7 @@
             this.groupBox1.Controls.Add(this.Products);
             this.groupBox1.Location = new System.Drawing.Point(12, 48);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(674, 470);
+            this.groupBox1.Size = new System.Drawing.Size(674, 556);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
@@ -79,9 +83,9 @@
             this.panel1.Controls.Add(this.groupBox4);
             this.panel1.Controls.Add(this.groupBox2);
             this.panel1.Controls.Add(this.comboBox1);
-            this.panel1.Location = new System.Drawing.Point(199, 26);
+            this.panel1.Location = new System.Drawing.Point(199, 23);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(460, 425);
+            this.panel1.Size = new System.Drawing.Size(460, 512);
             this.panel1.TabIndex = 9;
             // 
             // groupBox4
@@ -143,23 +147,12 @@
             this.comboBox1.Text = "Filter";
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // button6
-            // 
-            this.button6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button6.Location = new System.Drawing.Point(18, 87);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(161, 59);
-            this.button6.TabIndex = 6;
-            this.button6.Text = "Point of Sales (POS)";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.btnPOS_click);
-            // 
             // button5
             // 
             this.button5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button5.Location = new System.Drawing.Point(18, 26);
+            this.button5.Location = new System.Drawing.Point(18, 22);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(161, 59);
+            this.button5.Size = new System.Drawing.Size(161, 50);
             this.button5.TabIndex = 5;
             this.button5.Text = "Dashboard";
             this.button5.UseVisualStyleBackColor = true;
@@ -167,9 +160,9 @@
             // button4
             // 
             this.button4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button4.Location = new System.Drawing.Point(18, 392);
+            this.button4.Location = new System.Drawing.Point(18, 428);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(161, 59);
+            this.button4.Size = new System.Drawing.Size(161, 50);
             this.button4.TabIndex = 4;
             this.button4.Text = "Customers";
             this.button4.UseVisualStyleBackColor = true;
@@ -178,9 +171,9 @@
             // button3
             // 
             this.button3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button3.Location = new System.Drawing.Point(18, 331);
+            this.button3.Location = new System.Drawing.Point(18, 254);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(161, 59);
+            this.button3.Size = new System.Drawing.Size(161, 50);
             this.button3.TabIndex = 3;
             this.button3.Text = "Sales";
             this.button3.UseVisualStyleBackColor = true;
@@ -189,9 +182,9 @@
             // button2
             // 
             this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button2.Location = new System.Drawing.Point(18, 270);
+            this.button2.Location = new System.Drawing.Point(18, 196);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(161, 59);
+            this.button2.Size = new System.Drawing.Size(161, 50);
             this.button2.TabIndex = 2;
             this.button2.Text = "Suppliers";
             this.button2.UseVisualStyleBackColor = true;
@@ -200,9 +193,9 @@
             // button1
             // 
             this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button1.Location = new System.Drawing.Point(18, 209);
+            this.button1.Location = new System.Drawing.Point(18, 138);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(161, 59);
+            this.button1.Size = new System.Drawing.Size(161, 50);
             this.button1.TabIndex = 1;
             this.button1.Text = "Inventory";
             this.button1.UseVisualStyleBackColor = true;
@@ -211,9 +204,9 @@
             // Products
             // 
             this.Products.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Products.Location = new System.Drawing.Point(18, 148);
+            this.Products.Location = new System.Drawing.Point(18, 80);
             this.Products.Name = "Products";
-            this.Products.Size = new System.Drawing.Size(161, 59);
+            this.Products.Size = new System.Drawing.Size(161, 50);
             this.Products.TabIndex = 0;
             this.Products.Text = "Products";
             this.Products.UseVisualStyleBackColor = true;
@@ -224,7 +217,7 @@
             this.dateAndTime.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dateAndTime.AutoSize = true;
             this.dateAndTime.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateAndTime.Location = new System.Drawing.Point(314, 23);
+            this.dateAndTime.Location = new System.Drawing.Point(314, 66);
             this.dateAndTime.Name = "dateAndTime";
             this.dateAndTime.Size = new System.Drawing.Size(10, 15);
             this.dateAndTime.TabIndex = 10;
@@ -250,11 +243,41 @@
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
             // 
+            // button6
+            // 
+            this.button6.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button6.Location = new System.Drawing.Point(18, 312);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(161, 50);
+            this.button6.TabIndex = 10;
+            this.button6.Text = "Transactions";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // button7
+            // 
+            this.button7.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button7.Location = new System.Drawing.Point(18, 486);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(161, 50);
+            this.button7.TabIndex = 11;
+            this.button7.Text = "Users";
+            this.button7.UseVisualStyleBackColor = true;
+            // 
+            // button8
+            // 
+            this.button8.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button8.Location = new System.Drawing.Point(18, 370);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(161, 50);
+            this.button8.TabIndex = 12;
+            this.button8.Text = "Product Categories";
+            this.button8.UseVisualStyleBackColor = true;
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(698, 530);
+            this.ClientSize = new System.Drawing.Size(698, 616);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dashboardLogout);
             this.Controls.Add(this.dateAndTime);
@@ -287,7 +310,6 @@
         private System.Windows.Forms.Button Products;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label dateAndTime;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -297,5 +319,8 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button dashboardLogout;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button8;
     }
 }
