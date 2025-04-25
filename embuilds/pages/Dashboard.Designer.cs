@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -44,9 +47,6 @@
             this.dateAndTime = new System.Windows.Forms.Label();
             this.dashboardLogout = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -74,6 +74,36 @@
             this.groupBox1.Size = new System.Drawing.Size(674, 556);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // button8
+            // 
+            this.button8.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button8.Location = new System.Drawing.Point(18, 370);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(161, 50);
+            this.button8.TabIndex = 12;
+            this.button8.Text = "Product Categories";
+            this.button8.UseVisualStyleBackColor = true;
+            // 
+            // button7
+            // 
+            this.button7.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button7.Location = new System.Drawing.Point(18, 486);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(161, 50);
+            this.button7.TabIndex = 11;
+            this.button7.Text = "Users";
+            this.button7.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            this.button6.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button6.Location = new System.Drawing.Point(18, 312);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(161, 50);
+            this.button6.TabIndex = 10;
+            this.button6.Text = "Transactions";
+            this.button6.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
@@ -217,7 +247,7 @@
             this.dateAndTime.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dateAndTime.AutoSize = true;
             this.dateAndTime.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateAndTime.Location = new System.Drawing.Point(314, 66);
+            this.dateAndTime.Location = new System.Drawing.Point(311, 21);
             this.dateAndTime.Name = "dateAndTime";
             this.dateAndTime.Size = new System.Drawing.Size(10, 15);
             this.dateAndTime.TabIndex = 10;
@@ -242,36 +272,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
-            // 
-            // button6
-            // 
-            this.button6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button6.Location = new System.Drawing.Point(18, 312);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(161, 50);
-            this.button6.TabIndex = 10;
-            this.button6.Text = "Transactions";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            this.button7.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button7.Location = new System.Drawing.Point(18, 486);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(161, 50);
-            this.button7.TabIndex = 11;
-            this.button7.Text = "Users";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // button8
-            // 
-            this.button8.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button8.Location = new System.Drawing.Point(18, 370);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(161, 50);
-            this.button8.TabIndex = 12;
-            this.button8.Text = "Product Categories";
-            this.button8.UseVisualStyleBackColor = true;
             // 
             // Dashboard
             // 
