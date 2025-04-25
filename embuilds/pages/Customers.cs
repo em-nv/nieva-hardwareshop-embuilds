@@ -23,5 +23,13 @@ namespace embuilds.pages
             dashboard.Show();
             this.Hide();
         }
+
+        private void frmCustomerList_Load(object sender, EventArgs e)
+        {
+            var conn_db = new conn_DB();
+            dataGridCustomers.DataSource = conn_db.GetAllCustomers();
+            dataGridCustomers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+        }
     }
 }
