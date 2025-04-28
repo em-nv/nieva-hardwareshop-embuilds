@@ -24,14 +24,16 @@ namespace embuilds.pages
             this.Hide();
         }
 
-        private void Sales_Load(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void frmSales_Load(object sender, EventArgs e)
         {
-
+            var conn_db = new conn_DB();
+            dataGridSales.DataSource = conn_db.GetAllSales();
+            dataGridSales.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
     }
 }

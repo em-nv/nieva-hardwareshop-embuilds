@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace embuilds.pages
 {
-    public partial class Customers : Form
+    public partial class MyAccount : Form
     {
-        public Customers()
+        public MyAccount()
         {
             InitializeComponent();
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -24,15 +34,17 @@ namespace embuilds.pages
             this.Hide();
         }
 
-        private void frmCustomerList_Load(object sender, EventArgs e)
+        private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            var conn_db = new conn_DB();
-            dataGridCustomers.DataSource = conn_db.GetAllCustomers();
-            dataGridCustomers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void label4_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
         {
 
         }

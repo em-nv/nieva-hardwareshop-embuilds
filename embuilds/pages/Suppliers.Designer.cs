@@ -52,9 +52,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridSuppliers.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridSuppliers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridSuppliers.Location = new System.Drawing.Point(12, 74);
+            this.dataGridSuppliers.Location = new System.Drawing.Point(12, 66);
             this.dataGridSuppliers.Name = "dataGridSuppliers";
-            this.dataGridSuppliers.Size = new System.Drawing.Size(875, 328);
+            this.dataGridSuppliers.Size = new System.Drawing.Size(875, 336);
             this.dataGridSuppliers.TabIndex = 4;
             // 
             // label1
@@ -64,11 +64,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(385, 33);
+            this.label1.Location = new System.Drawing.Point(12, 29);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 21);
+            this.label1.Size = new System.Drawing.Size(141, 21);
             this.label1.TabIndex = 8;
-            this.label1.Text = "Suppliers";
+            this.label1.Text = "Manage Suppliers";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 

@@ -52,9 +52,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridProducts.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridProducts.Location = new System.Drawing.Point(12, 81);
+            this.dataGridProducts.Location = new System.Drawing.Point(12, 69);
             this.dataGridProducts.Name = "dataGridProducts";
-            this.dataGridProducts.Size = new System.Drawing.Size(783, 321);
+            this.dataGridProducts.Size = new System.Drawing.Size(783, 333);
             this.dataGridProducts.TabIndex = 1;
             // 
             // label1
@@ -64,9 +64,9 @@
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(12, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 21);
+            this.label1.Size = new System.Drawing.Size(138, 21);
             this.label1.TabIndex = 8;
-            this.label1.Text = "Products";
+            this.label1.Text = "Manage Products";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 

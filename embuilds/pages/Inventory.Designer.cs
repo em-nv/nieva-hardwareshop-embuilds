@@ -29,11 +29,6 @@
         private void InitializeComponent()
         {
             this.dataGridInventory = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StockAvailable = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StockStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridInventory)).BeginInit();
@@ -46,47 +41,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridInventory.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridInventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridInventory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
-            this.ProductName,
-            this.StockAvailable,
-            this.StockStatus,
-            this.Column1});
-            this.dataGridInventory.Location = new System.Drawing.Point(12, 78);
+            this.dataGridInventory.Location = new System.Drawing.Point(12, 64);
             this.dataGridInventory.Name = "dataGridInventory";
-            this.dataGridInventory.Size = new System.Drawing.Size(583, 324);
+            this.dataGridInventory.Size = new System.Drawing.Size(583, 338);
             this.dataGridInventory.TabIndex = 3;
-            // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            // 
-            // ProductName
-            // 
-            this.ProductName.HeaderText = "Product Name";
-            this.ProductName.Name = "ProductName";
-            this.ProductName.ReadOnly = true;
-            this.ProductName.Width = 140;
-            // 
-            // StockAvailable
-            // 
-            this.StockAvailable.HeaderText = "Stock Available";
-            this.StockAvailable.Name = "StockAvailable";
-            this.StockAvailable.ReadOnly = true;
-            // 
-            // StockStatus
-            // 
-            this.StockStatus.HeaderText = "Stock Status";
-            this.StockStatus.Name = "StockStatus";
-            this.StockStatus.ReadOnly = true;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "...";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
             // 
             // button1
             // 
@@ -106,7 +64,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(263, 32);
+            this.label1.Location = new System.Drawing.Point(12, 26);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(81, 21);
             this.label1.TabIndex = 7;
@@ -126,6 +84,7 @@
             this.Name = "Inventory";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inventory";
+            this.Load += new System.EventHandler(this.frmInventory_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridInventory)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -137,10 +96,5 @@
         private System.Windows.Forms.DataGridView dataGridInventory;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ProductName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn StockAvailable;
-        private System.Windows.Forms.DataGridViewTextBoxColumn StockStatus;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
     }
 }

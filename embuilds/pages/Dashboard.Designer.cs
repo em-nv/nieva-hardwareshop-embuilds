@@ -38,7 +38,6 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -47,6 +46,7 @@
             this.dateAndTime = new System.Windows.Forms.Label();
             this.dashboardLogout = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button5 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -59,11 +59,11 @@
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.button5);
             this.groupBox1.Controls.Add(this.button8);
             this.groupBox1.Controls.Add(this.button7);
             this.groupBox1.Controls.Add(this.button6);
             this.groupBox1.Controls.Add(this.panel1);
-            this.groupBox1.Controls.Add(this.button5);
             this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.button2);
@@ -78,32 +78,35 @@
             // button8
             // 
             this.button8.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button8.Location = new System.Drawing.Point(18, 370);
+            this.button8.Location = new System.Drawing.Point(18, 313);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(161, 50);
             this.button8.TabIndex = 12;
             this.button8.Text = "Product Categories";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.btnProductCategories_Click);
             // 
             // button7
             // 
             this.button7.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button7.Location = new System.Drawing.Point(18, 486);
+            this.button7.Location = new System.Drawing.Point(18, 429);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(161, 50);
             this.button7.TabIndex = 11;
             this.button7.Text = "Users";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.btnUsers_Click);
             // 
             // button6
             // 
             this.button6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button6.Location = new System.Drawing.Point(18, 312);
+            this.button6.Location = new System.Drawing.Point(18, 255);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(161, 50);
             this.button6.TabIndex = 10;
             this.button6.Text = "Transactions";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // panel1
             // 
@@ -177,20 +180,10 @@
             this.comboBox1.Text = "Filter";
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // button5
-            // 
-            this.button5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button5.Location = new System.Drawing.Point(18, 22);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(161, 50);
-            this.button5.TabIndex = 5;
-            this.button5.Text = "Dashboard";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
             // button4
             // 
             this.button4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button4.Location = new System.Drawing.Point(18, 428);
+            this.button4.Location = new System.Drawing.Point(18, 371);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(161, 50);
             this.button4.TabIndex = 4;
@@ -201,7 +194,7 @@
             // button3
             // 
             this.button3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button3.Location = new System.Drawing.Point(18, 254);
+            this.button3.Location = new System.Drawing.Point(18, 197);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(161, 50);
             this.button3.TabIndex = 3;
@@ -212,7 +205,7 @@
             // button2
             // 
             this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button2.Location = new System.Drawing.Point(18, 196);
+            this.button2.Location = new System.Drawing.Point(18, 139);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(161, 50);
             this.button2.TabIndex = 2;
@@ -223,7 +216,7 @@
             // button1
             // 
             this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button1.Location = new System.Drawing.Point(18, 138);
+            this.button1.Location = new System.Drawing.Point(18, 81);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(161, 50);
             this.button1.TabIndex = 1;
@@ -234,7 +227,7 @@
             // Products
             // 
             this.Products.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Products.Location = new System.Drawing.Point(18, 80);
+            this.Products.Location = new System.Drawing.Point(18, 23);
             this.Products.Name = "Products";
             this.Products.Size = new System.Drawing.Size(161, 50);
             this.Products.TabIndex = 0;
@@ -273,6 +266,17 @@
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
             // 
+            // button5
+            // 
+            this.button5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button5.Location = new System.Drawing.Point(18, 486);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(161, 50);
+            this.button5.TabIndex = 13;
+            this.button5.Text = "Manage My Account";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.btnManageAccount_Click);
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -308,7 +312,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button Products;
-        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label dateAndTime;
@@ -322,5 +325,6 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button button5;
     }
 }

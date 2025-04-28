@@ -137,5 +137,33 @@ namespace embuilds.pages
                 }
             }
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Transactions transactions = new Transactions();
+            transactions.Show();
+            this.Hide();
+        }
+
+        private void btnProductCategories_Click(object sender, EventArgs e)
+        {
+            ProductCategories productCategories = new ProductCategories();
+            productCategories.Show();
+            this.Hide();
+        }
+
+        private void btnUsers_Click(object sender, EventArgs e)
+        {
+            Users users = new Users();
+            users.Show();
+            this.Hide();
+        }
+
+        private void btnManageAccount_Click(object sender, EventArgs e)
+        {
+            MyAccount myAccount = new MyAccount();
+            myAccount.Show();
+            this.Hide();
+        }
     }
 }

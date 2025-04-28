@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace embuilds.pages
 {
-    public partial class Inventory : Form
+    public partial class ProductCategories : Form
     {
-        public Inventory()
+        public ProductCategories()
         {
             InitializeComponent();
+        }
+
+        private void frmProductCategories_Load(object sender, EventArgs e)
+        {
+            var conn_db = new conn_DB();
+            dataGridProductCategories.DataSource = conn_db.GetAllProductCategories();
+            dataGridProductCategories.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -22,18 +29,6 @@ namespace embuilds.pages
             Dashboard dashboard = new Dashboard();
             dashboard.Show();
             this.Hide();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void frmInventory_Load(object sender, EventArgs e)
-        {
-            var conn_db = new conn_DB();
-            dataGridInventory.DataSource = conn_db.GetAllInventory();
-            dataGridInventory.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
     }
 }
