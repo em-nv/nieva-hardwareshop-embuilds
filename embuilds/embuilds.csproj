@@ -184,6 +184,12 @@
     <Compile Include="pages\SecurityQuestion.Designer.cs">
       <DependentUpon>SecurityQuestion.cs</DependentUpon>
     </Compile>
+    <Compile Include="pages\SupplierAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pages\SupplierAdd.Designer.cs">
+      <DependentUpon>SupplierAdd.cs</DependentUpon>
+    </Compile>
     <Compile Include="pages\Suppliers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -242,6 +248,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="pages\SecurityQuestion.resx">
       <DependentUpon>SecurityQuestion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pages\SupplierAdd.resx">
+      <DependentUpon>SupplierAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="pages\Suppliers.resx">
       <DependentUpon>Suppliers.cs</DependentUpon>

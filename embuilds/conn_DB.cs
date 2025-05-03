@@ -232,5 +232,11 @@ namespace embuilds
             return dt;
         }
 
+        public MySqlConnection GetConnection()
+        {
+            return new MySqlConnection(connectionString);
+        }
+
+
     }
 }

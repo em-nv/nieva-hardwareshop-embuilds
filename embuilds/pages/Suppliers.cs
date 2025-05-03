@@ -35,5 +35,12 @@ namespace embuilds.pages
             dataGridSuppliers.DataSource = conn_db.GetAllSuppliers();
             dataGridSuppliers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
+
+        private void btnAddNewSupplier_Click(object sender, EventArgs e)
+        {
+            SupplierAdd supplierAdd = new SupplierAdd();
+            supplierAdd.Show();
+            this.Hide();
+        }
     }
 }
