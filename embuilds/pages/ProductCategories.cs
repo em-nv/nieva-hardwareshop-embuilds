@@ -30,5 +30,12 @@ namespace embuilds.pages
             dashboard.Show();
             this.Hide();
         }
+
+        private void btnAddNewCategory_Click(object sender, EventArgs e)
+        {
+            ProductCategoryAdd productCategoryAdd = new ProductCategoryAdd();
+            productCategoryAdd.Show();
+            this.Hide();
+        }
     }
 }
