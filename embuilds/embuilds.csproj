@@ -154,6 +154,12 @@
     <Compile Include="pages\POS.Designer.cs">
       <DependentUpon>POS.cs</DependentUpon>
     </Compile>
+    <Compile Include="pages\ProductAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pages\ProductAdd.Designer.cs">
+      <DependentUpon>ProductAdd.cs</DependentUpon>
+    </Compile>
     <Compile Include="pages\ProductCategories.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -221,6 +227,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="pages\POS.resx">
       <DependentUpon>POS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pages\ProductAdd.resx">
+      <DependentUpon>ProductAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="pages\ProductCategories.resx">
       <DependentUpon>ProductCategories.cs</DependentUpon>

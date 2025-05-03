@@ -14,7 +14,8 @@ namespace embuilds
 {
     internal class conn_DB
     {
-        private readonly string connectionString = "server=localhost; database=hardwareshopdb; uid=root; pwd=emman;";
+        //private readonly string connectionString = "server=localhost; database=hardwareshopdb; uid=root; pwd=emman;";
+        public string connectionString = "server=localhost; database=hardwareshopdb; uid=root; pwd=emman;";
 
         // user login validation
         public bool ValidateLogin(string username, string password)
