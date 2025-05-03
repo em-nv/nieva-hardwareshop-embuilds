@@ -35,5 +35,12 @@ namespace embuilds.pages
             dashboard.Show();
             this.Hide();
         }
+
+        private void btnAddNewUser_Click(object sender, EventArgs e)
+        {
+            UserAdd userAdd = new UserAdd();
+            userAdd.Show();
+            this.Hide();
+        }
     }
 }

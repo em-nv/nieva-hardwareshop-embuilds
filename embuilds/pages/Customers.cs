@@ -36,5 +36,12 @@ namespace embuilds.pages
         {
 
         }
+
+        private void btnAddNewCustomer_Click(object sender, EventArgs e)
+        {
+            CustomerAdd customerAdd = new CustomerAdd();
+            customerAdd.Show();
+            this.Hide();
+        }
     }
 }
