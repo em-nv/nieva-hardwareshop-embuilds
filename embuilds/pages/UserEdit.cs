@@ -129,8 +129,8 @@ namespace embuilds.pages
                         if (rowsAffected > 0)
                         {
                             MessageBox.Show("User info updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            Customers customers = new Customers();
-                            customers.Show();
+                            Users users = new Users();
+                            users.Show();
                             this.Hide();
                         }
                         else

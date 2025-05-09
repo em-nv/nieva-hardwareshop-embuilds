@@ -215,6 +215,12 @@
     <Compile Include="pages\Products.Designer.cs">
       <DependentUpon>Products.cs</DependentUpon>
     </Compile>
+    <Compile Include="pages\ResetPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pages\ResetPassword.Designer.cs">
+      <DependentUpon>ResetPassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="pages\Sales.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -268,6 +274,12 @@
     </Compile>
     <Compile Include="pages\Users.Designer.cs">
       <DependentUpon>Users.cs</DependentUpon>
+    </Compile>
+    <Compile Include="pages\VerifyIdentity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pages\VerifyIdentity.Designer.cs">
+      <DependentUpon>VerifyIdentity.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -325,6 +337,9 @@
     <EmbeddedResource Include="pages\Products.resx">
       <DependentUpon>Products.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="pages\ResetPassword.resx">
+      <DependentUpon>ResetPassword.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="pages\Sales.resx">
       <DependentUpon>Sales.cs</DependentUpon>
     </EmbeddedResource>
@@ -351,6 +366,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="pages\Users.resx">
       <DependentUpon>Users.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pages\VerifyIdentity.resx">
+      <DependentUpon>VerifyIdentity.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
