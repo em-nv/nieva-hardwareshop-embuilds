@@ -185,6 +185,12 @@
     <Compile Include="pages\ProductCategoryAdd.Designer.cs">
       <DependentUpon>ProductCategoryAdd.cs</DependentUpon>
     </Compile>
+    <Compile Include="pages\ProductEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pages\ProductEdit.Designer.cs">
+      <DependentUpon>ProductEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="pages\Products.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -273,6 +279,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="pages\ProductCategoryAdd.resx">
       <DependentUpon>ProductCategoryAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pages\ProductEdit.resx">
+      <DependentUpon>ProductEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="pages\Products.resx">
       <DependentUpon>Products.cs</DependentUpon>
