@@ -40,45 +40,91 @@ namespace embuilds.pages
                 dataGridUsers.Columns.Add(editButton);
             }
 
+            // Add Delete button column
+            if (!dataGridUsers.Columns.Contains("Delete"))
+            {
+                DataGridViewButtonColumn deleteButton = new DataGridViewButtonColumn();
+                deleteButton.Name = "Delete";
+                deleteButton.HeaderText = "Action";
+                deleteButton.Text = "Delete";
+                deleteButton.UseColumnTextForButtonValue = true;
+                dataGridUsers.Columns.Add(deleteButton);
+            }
+
             // Handle button click event
             dataGridUsers.CellClick += dataGridUsers_CellClick;
         }
 
+
+
         private void dataGridUsers_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            // Ensure the row index is valid and the column is "Edit"
-            if (e.RowIndex >= 0 && dataGridUsers.Columns[e.ColumnIndex].Name == "Edit")
+            if (e.RowIndex >= 0)
             {
-                try
+                var selectedRow = dataGridUsers.Rows[e.RowIndex];
+
+                // Ensure "id" column exists and has value
+                if (selectedRow.Cells["id"].Value == null)
                 {
-                    // Retrieve the selected row
-                    var selectedRow = dataGridUsers.Rows[e.RowIndex];
-
-                    // Safely extract ProductID (make sure column name matches your data)
-                    if (selectedRow.Cells["id"].Value != null) // Ensure "id" matches your column name
-                    {
-                        int userId = Convert.ToInt32(selectedRow.Cells["id"].Value);
-
-                        UserEdit userEdit = new UserEdit();
-                        userEdit.UserId = userId;
-                        this.Hide();
-
-
-
-                        userEdit.ShowDialog(); // Open the ProductEdit form modally
-                    }
-                    else
-                    {
-                        MessageBox.Show("User ID is missing for the selected row.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                    MessageBox.Show("User ID not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
-                catch (Exception ex)
+
+                int userId = Convert.ToInt32(selectedRow.Cells["id"].Value);
+
+                // Handle Edit
+                if (dataGridUsers.Columns[e.ColumnIndex].Name == "Edit")
                 {
-                    MessageBox.Show("An error occurred while trying to open the product editor:\n" + ex.Message,
-                                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    UserEdit userEdit = new UserEdit();
+                    userEdit.UserId = userId;
+                    this.Hide();
+                    userEdit.ShowDialog();
+                }
+
+                // Handle Delete
+                else if (dataGridUsers.Columns[e.ColumnIndex].Name == "Delete")
+                {
+                    var confirmResult = MessageBox.Show("Are you sure you want to delete this user?",
+                                                        "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                    if (confirmResult == DialogResult.Yes)
+                    {
+                        try
+                        {
+                            conn_DB db = new conn_DB();
+                            using (MySql.Data.MySqlClient.MySqlConnection conn = db.GetConnection())
+                            {
+                                conn.Open();
+
+                                string query = "DELETE FROM users WHERE id = @id";
+                                using (MySql.Data.MySqlClient.MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand(query, conn))
+                                {
+                                    cmd.Parameters.AddWithValue("@id", userId);
+                                    int rowsAffected = cmd.ExecuteNonQuery();
+
+                                    if (rowsAffected > 0)
+                                    {
+                                        MessageBox.Show("User deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                        // Refresh the grid
+                                        dataGridUsers.DataSource = db.GetAllUsers();
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("User could not be deleted.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    }
+                                }
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("An error occurred while deleting the user:\n" + ex.Message,
+                                            "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
                 }
             }
         }
+
 
         private void btnBack_Click(object sender, EventArgs e)
         {
