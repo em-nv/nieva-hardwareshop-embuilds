@@ -31,7 +31,7 @@ CREATE TABLE `categories` (
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,7 +40,7 @@ CREATE TABLE `categories` (
 
 LOCK TABLES `categories` WRITE;
 /*!40000 ALTER TABLE `categories` DISABLE KEYS */;
-INSERT INTO `categories` VALUES (1,'Power Tools','Tools powered by electricity, batteries, or compressed air.','2025-04-23 11:39:37','2025-04-23 11:39:37'),(2,'Hand Tools','Manual tools for various tasks like screwing, cutting, or hammering.','2025-04-23 11:39:37','2025-04-23 11:39:37'),(3,'Fasteners','Items used for joining materials such as screws, nails, and bolts.','2025-04-23 11:39:37','2025-04-23 11:39:37'),(4,'Plumbing','Pipes, faucets, and tools used for water and gas systems installation and repair.','2025-04-23 11:39:37','2025-04-23 11:39:37'),(5,'Electrical','Wires, cables, and electrical components used for electrical systems.','2025-04-23 11:39:37','2025-04-23 11:39:37'),(6,'Paint & Adhesives','Products like paint, varnish, and glues for sticking or coating surfaces.','2025-04-23 11:39:37','2025-04-23 11:39:37'),(7,'Safety Equipment','Protective gear like helmets, gloves, goggles, and safety shoes.','2025-04-23 11:39:37','2025-04-23 11:39:37'),(8,'Gardening Tools','Tools for gardening such as shovels, rakes, and pruners.','2025-04-23 11:39:37','2025-04-23 11:39:37'),(9,'Woodworking','Tools and materials for crafting, cutting, and shaping wood.','2025-04-23 11:39:37','2025-04-23 11:39:37'),(10,'Measuring Tools','Tools used to measure length, width, depth, or angles such as tape measures and levels.','2025-04-23 11:39:37','2025-04-23 11:39:37'),(16,'Category A','Description of Category A','2025-04-23 11:39:37','2025-04-23 11:39:37'),(17,'Category B','Description of Category B','2025-04-23 11:39:37','2025-04-23 11:39:37');
+INSERT INTO `categories` VALUES (21,'Plumbing','','2025-05-09 09:43:03','2025-05-09 13:12:30'),(22,'Paint','','2025-05-09 09:43:11','2025-05-09 13:08:14'),(23,'Adhesive',NULL,'2025-05-09 09:43:24','2025-05-09 09:43:24'),(24,'Gardening',NULL,'2025-05-09 09:43:36','2025-05-09 09:43:36'),(25,'Power & Hand Tools',NULL,'2025-05-09 09:44:00','2025-05-09 09:44:00'),(26,'Locks & Safety',NULL,'2025-05-09 09:44:21','2025-05-09 09:44:21'),(27,'Hammer','','2025-05-09 09:44:29','2025-05-09 13:08:33');
 /*!40000 ALTER TABLE `categories` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -86,7 +86,7 @@ CREATE TABLE `customers` (
   `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `phone_number` (`phone_number`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -95,7 +95,7 @@ CREATE TABLE `customers` (
 
 LOCK TABLES `customers` WRITE;
 /*!40000 ALTER TABLE `customers` DISABLE KEYS */;
-INSERT INTO `customers` VALUES (1,'James','Loria','Dalas','1550','Legazpi City, Albay','2025-04-23 11:41:17','2025-04-23 11:41:17'),(2,'Juan','Salas','Operio','09129876543','Legazpi City, Albay','2025-04-23 11:41:17','2025-04-23 11:41:17'),(4,'Monica','Paz','Dayap','09123336543','Guinobatan, Albay','2025-04-23 11:41:17','2025-04-23 11:41:17'),(5,'Mark','Nio','Suarez','09129078043','Pioduran, Albay','2025-04-23 11:41:17','2025-04-23 11:41:17'),(7,'Francis','Co','Sy','09659583965','Polangui, Albay','2025-04-23 11:41:17','2025-04-23 11:41:17'),(8,'Gerald','','Paz','09573758393','Oas, Albay','2025-04-23 11:41:17','2025-04-23 11:41:17'),(13,'Agnes',NULL,'Loria','09345545350','Legazpi City, Albay','2025-04-23 11:41:17','2025-04-23 11:41:17'),(14,'Joseph',NULL,'Magno','09234454566','Oas, Albay','2025-04-23 11:41:17','2025-04-23 11:41:17');
+INSERT INTO `customers` VALUES (15,'Joshua',NULL,'Non','4772','fdf','2025-05-03 16:18:25','2025-05-09 13:41:38'),(16,'Kyla',NULL,'a','09123456789','a','2025-05-09 13:28:18','2025-05-09 15:35:37'),(17,'h',NULL,'h','09123457789','l','2025-05-09 15:36:06','2025-05-09 15:38:40');
 /*!40000 ALTER TABLE `customers` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
@@ -160,7 +160,7 @@ CREATE TABLE `deleted_customers` (
   `address` varchar(255) DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -169,6 +169,7 @@ CREATE TABLE `deleted_customers` (
 
 LOCK TABLES `deleted_customers` WRITE;
 /*!40000 ALTER TABLE `deleted_customers` DISABLE KEYS */;
+INSERT INTO `deleted_customers` VALUES (26,1,'James','Loria','Dalas','1550','Legazpi City, Albay','2025-05-03 14:02:57'),(27,2,'Juan','Salas','Operio','09129876543','Legazpi City, Albay','2025-05-03 14:02:57'),(28,4,'Monica','Paz','Dayap','09123336543','Guinobatan, Albay','2025-05-03 14:02:57'),(29,5,'Mark','Nio','Suarez','09129078043','Pioduran, Albay','2025-05-03 14:02:57'),(30,7,'Francis','Co','Sy','09659583965','Polangui, Albay','2025-05-03 14:02:57'),(31,8,'Gerald','','Paz','09573758393','Oas, Albay','2025-05-03 14:02:57'),(32,13,'Agnes',NULL,'Loria','09345545350','Legazpi City, Albay','2025-05-03 14:02:57'),(33,14,'Joseph',NULL,'Magno','09234454566','Oas, Albay','2025-05-03 14:02:57');
 /*!40000 ALTER TABLE `deleted_customers` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -189,7 +190,7 @@ CREATE TABLE `inventories` (
   PRIMARY KEY (`id`),
   KEY `product_id` (`product_id`),
   CONSTRAINT `inventories_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE RESTRICT ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -198,7 +199,7 @@ CREATE TABLE `inventories` (
 
 LOCK TABLES `inventories` WRITE;
 /*!40000 ALTER TABLE `inventories` DISABLE KEYS */;
-INSERT INTO `inventories` VALUES (1,4,15,'Medium Stock','2025-04-03 22:20:18','2025-04-03 22:20:18'),(2,7,50,'Medium Stock','2025-04-03 22:20:18','2025-04-03 22:20:18'),(3,9,201,'High Stock','2025-04-03 22:20:18','2025-04-03 22:20:18'),(4,1,28,'Medium Stock','2025-04-03 22:20:18','2025-04-03 22:20:18'),(5,5,35,'Medium Stock','2025-04-03 22:20:18','2025-04-03 22:20:18'),(6,6,55,'High Stock','2025-04-03 22:20:18','2025-04-03 22:20:18'),(7,2,5,'Low Stock','2025-04-03 22:20:18','2025-04-03 22:20:18'),(8,10,30,'Medium Stock','2025-04-03 22:20:18','2025-04-03 22:20:18'),(9,3,1,'Low Stock','2025-04-03 22:20:18','2025-04-03 22:20:18'),(26,52,50,'Medium Stock','2025-04-03 21:48:23','2025-04-23 19:54:38'),(27,53,NULL,'Out of Stock','2025-04-23 19:51:09','2025-04-23 19:51:18'),(28,54,NULL,'Out of Stock','2025-04-23 19:52:59','2025-04-23 19:53:08');
+INSERT INTO `inventories` VALUES (37,63,1,'Low Stock','2025-05-09 17:51:09','2025-05-09 23:53:37'),(38,64,0,'Out of Stock','2025-05-09 19:05:41','2025-05-09 23:54:28');
 /*!40000 ALTER TABLE `inventories` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -248,7 +249,7 @@ CREATE TABLE `products` (
   KEY `supplier_id` (`supplier_id`),
   CONSTRAINT `products_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`) ON DELETE RESTRICT ON UPDATE CASCADE,
   CONSTRAINT `products_ibfk_2` FOREIGN KEY (`supplier_id`) REFERENCES `suppliers` (`id`) ON DELETE RESTRICT ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=55 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=65 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -257,7 +258,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (1,'Cordless Drill','This is the new description of Cordless Drill',1,1,121.00,'2025-04-23 11:43:19','2025-04-23 11:43:19'),(2,'Hammer','A sturdy hammer for construction and repairs.',2,5,1096.16,'2025-04-23 11:43:19','2025-04-23 11:43:19'),(3,'Screws (Pack of 100)','Durable screws for general use in wood and metal.',3,3,21.93,'2025-04-23 11:43:19','2025-04-23 11:43:19'),(4,'Pipe Wrench','Lorem',4,1,153.47,'2025-04-23 11:43:19','2025-04-23 11:43:19'),(5,'Insulated Wire Cutter','Wire cutter with insulated handles for electrical work.',5,5,789.25,'2025-04-23 11:43:19','2025-04-23 11:43:19'),(6,'Paint Brush Set','Set of paintbrushes for various paint types and surfaces.',6,2,526.15,'2025-04-23 11:43:19','2025-04-23 11:43:19'),(7,'Safety Gloves','Heavy-duty gloves for protection against cuts and abrasions.',7,10,161.05,'2025-04-23 11:43:19','2025-04-23 11:43:19'),(8,'Garden Shovel','Sturdy shovel for digging and gardening tasks.',8,7,876.93,'2025-04-23 11:43:19','2025-04-23 11:43:19'),(9,'Wood Saw','A hand saw designed for cutting wood with ease.',9,8,1096.16,'2025-04-23 11:43:19','2025-04-23 11:43:19'),(10,'Laser Measure','Laser measuring tool for quick and accurate distance measurements.',10,10,322.10,'2025-04-23 11:43:19','2025-04-23 11:43:19'),(11,'Hand Pruner','Gardening tool used to cut branches, stems, and shrubs. ',8,8,440.00,'2025-04-23 11:43:19','2025-04-23 11:43:19'),(12,'Hand Rake','A small rake with a short handle that\'s used for gardening tasks in tight spaces.',8,8,330.00,'2025-04-23 11:43:19','2025-04-23 11:43:19'),(13,'Hedge Shears','Hand-operated tools with sharp blades used for cutting metal, plants, and other materials. ',8,8,220.00,'2025-04-23 11:43:19','2025-04-23 11:43:19'),(14,'Loppers','A type of scissors used for pruning twigs and small branches, like pruning shears with very long handles.',8,8,110.00,'2025-04-23 11:43:19','2025-04-23 11:43:19'),(15,'Pipe Wrench','A type of wrench specifically designed to grip and turn cylindrical objects like pipes',4,4,1315.39,'2025-04-23 11:43:19','2025-04-23 11:43:19'),(51,'Product A','Description of Product A',1,1,500.00,'2025-04-23 11:43:19','2025-04-23 11:43:19'),(52,'Product B','Description of Product B',1,2,200.00,'2025-04-23 11:43:19','2025-04-23 11:43:19'),(53,'Product C',NULL,1,1,50.00,'2025-04-23 11:51:09','2025-04-23 11:51:09'),(54,'ss',NULL,5,5,10.00,'2025-04-23 11:52:59','2025-04-23 11:52:59');
+INSERT INTO `products` VALUES (63,'Italy Standard Shower','',21,1,226.00,'2025-05-09 09:51:09','2025-05-09 11:48:13'),(64,'Elbow Pipe Connector','',21,1,81.00,'2025-05-09 11:05:41','2025-05-09 12:52:09');
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
@@ -300,7 +301,7 @@ CREATE TABLE `sales` (
   KEY `product_id` (`product_id`),
   CONSTRAINT `sales_ibfk_1` FOREIGN KEY (`customer_id`) REFERENCES `customers` (`id`) ON DELETE RESTRICT ON UPDATE CASCADE,
   CONSTRAINT `sales_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE RESTRICT ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=64 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=68 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -309,7 +310,7 @@ CREATE TABLE `sales` (
 
 LOCK TABLES `sales` WRITE;
 /*!40000 ALTER TABLE `sales` DISABLE KEYS */;
-INSERT INTO `sales` VALUES (39,NULL,6,4,2104.60,'2025-03-14 10:42:49','2025-04-23 11:44:51'),(40,NULL,7,1,161.05,'2025-03-14 10:42:56','2025-04-23 11:44:51'),(41,NULL,8,1,876.93,'2025-03-14 10:43:19','2025-04-23 11:44:51'),(42,NULL,9,3,3288.48,'2025-03-14 10:43:39','2025-04-23 11:44:51'),(43,8,10,1,322.10,'2025-03-14 10:43:48','2025-04-23 11:44:51'),(44,NULL,5,2,1578.50,'2025-03-15 08:27:26','2025-04-23 11:44:51'),(45,NULL,1,2,250.00,'2025-03-15 08:54:25','2025-04-23 11:44:51'),(46,NULL,2,1,1096.16,'2025-03-15 08:54:59','2025-04-23 11:44:51'),(47,NULL,5,2,1578.50,'2025-03-15 09:03:43','2025-04-23 11:44:51'),(52,NULL,1,10,1210.00,'2025-03-15 09:05:47','2025-04-23 11:44:51'),(53,NULL,1,2,242.00,'2025-03-17 05:45:47','2025-04-23 11:44:51'),(54,NULL,2,1,1096.16,'2025-03-17 05:46:18','2025-04-23 11:44:51'),(59,NULL,3,10,219.30,'2025-03-17 05:52:02','2025-04-23 11:44:51'),(63,NULL,6,1,526.15,'2025-04-23 11:49:34','2025-04-23 11:50:06');
+INSERT INTO `sales` VALUES (64,15,63,1,226.00,'2025-05-09 15:41:58','2025-05-09 15:41:58'),(65,15,63,5,1130.00,'2025-05-09 15:43:04','2025-05-09 15:43:04'),(66,15,63,4,904.00,'2025-05-09 15:53:37','2025-05-09 15:53:37'),(67,15,64,5,405.00,'2025-05-09 15:54:27','2025-05-09 15:54:27');
 /*!40000 ALTER TABLE `sales` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
@@ -345,9 +346,15 @@ DELIMITER ;
 /*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 /*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `after_insert_sales` AFTER INSERT ON `sales` FOR EACH ROW BEGIN
-    -- Insert a new transaction record with the corresponding sale_id
+    -- Insert a new transaction record
     INSERT INTO transactions (sale_id, payment_method, amount_paid)
     VALUES (NEW.id, "Cash", NEW.total_price);
+
+    -- Decrease stock_available in inventories for the sold product
+    UPDATE inventories
+    SET stock_available = stock_available - NEW.quantity,
+        updated_at = NOW()
+    WHERE product_id = NEW.product_id;
 END */;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -442,7 +449,7 @@ CREATE TABLE `suppliers` (
   `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `contact_number` (`contact_person_number`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -451,7 +458,7 @@ CREATE TABLE `suppliers` (
 
 LOCK TABLES `suppliers` WRITE;
 /*!40000 ALTER TABLE `suppliers` DISABLE KEYS */;
-INSERT INTO `suppliers` VALUES (1,'ToolMaster Ltd','toolmaster@gmail.com','Joshua Po','09128664993','Naga City, Camarines Sur','active','2025-04-23 11:45:54','2025-04-23 11:45:54'),(2,'HandyWorks','handyworks@gmail.com','David Kim','09123456789','Manila, Metro Manila','active','2025-04-23 11:45:54','2025-04-23 11:45:54'),(3,'FastenIt Co.','fastenit@gmail.com','Jarren Palma','09234567890','Quezon City, Metro Manila','active','2025-04-23 11:45:54','2025-04-23 11:45:54'),(4,'PipeLine Inc','pipelineinc@gmail.com','Allan Mapa','09345678901','Angeles City, Pampanga','active','2025-04-23 11:45:54','2025-04-23 11:45:54'),(5,'ElectricPro','electricpro@gmail.com','Jude Zara','09134567890','Taguig City, Metro Manila','active','2025-04-23 11:45:54','2025-04-23 11:45:54'),(6,'PaintWorld','paintworld@gmail.com','Elmo Dy','09212345678','Caloocan City, Metro Manila','active','2025-04-23 11:45:54','2025-04-23 11:45:54'),(7,'Gogo','gogo@gmail.com','Denver Camo','09456789012','Baguio City, Benguet','active','2025-04-23 11:45:54','2025-04-23 11:45:54'),(8,'GreenYard','greenyard@gmail.com','Gerald Lopez','09356789012','San Fernando, Pampanga','inactive','2025-04-23 11:45:54','2025-04-23 11:45:54'),(9,'WoodCrafters','woodcrafters@gmail.com','Teddy Lora','09567890123','Tarlac City, Tarlac','inactive','2025-04-23 11:45:54','2025-04-23 11:45:54'),(10,'PrecisionTools','precisiontools@gmail.com','Anthony Reyes','911369','Batangas City, Batangas','inactive','2025-04-23 11:45:54','2025-04-23 11:45:54');
+INSERT INTO `suppliers` VALUES (1,'ToolMaster Ltd','toolmaster@gmail.com','Joshua Po','09128664993','Naga City, Camarines Sur','inactive','2025-04-23 11:45:54','2025-05-09 12:26:07'),(2,'HandyWorks','handyworks@gmail.com','David Kim','09123456789','Manila, Metro Manila','inactive','2025-04-23 11:45:54','2025-05-09 12:26:14'),(3,'FastenIt Co.','fastenit@gmail.com','Jarren Palma','09234567890','Quezon City, Metro Manila','active','2025-04-23 11:45:54','2025-04-23 11:45:54'),(4,'PipeLine Inc','pipelineinc@gmail.com','Allan Mapa','09345678901','Angeles City, Pampanga','active','2025-04-23 11:45:54','2025-04-23 11:45:54'),(5,'ElectricPro','electricpro@gmail.com','Jude Zara','09134567890','Taguig City, Metro Manila','active','2025-04-23 11:45:54','2025-04-23 11:45:54'),(6,'PaintWorld','paintworld@gmail.com','Elmo Dy','09212345678','Caloocan City, Metro Manila','active','2025-04-23 11:45:54','2025-04-23 11:45:54'),(7,'Gogo','gogo@gmail.com','Denver Camo','09456789012','Baguio City, Benguet','active','2025-04-23 11:45:54','2025-04-23 11:45:54'),(8,'GreenYard','greenyard@gmail.com','Gerald Lopez','09356789012','San Fernando, Pampanga','inactive','2025-04-23 11:45:54','2025-04-23 11:45:54'),(9,'WoodCrafters','woodcrafters@gmail.com','Teddy Lora','09567890123','Tarlac City, Tarlac','inactive','2025-04-23 11:45:54','2025-04-23 11:45:54'),(10,'PrecisionTools','precisiontools@gmail.com','Anthony Reyes','911369','Batangas City, Batangas','active','2025-04-23 11:45:54','2025-05-09 12:26:38');
 /*!40000 ALTER TABLE `suppliers` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -472,7 +479,7 @@ CREATE TABLE `transactions` (
   PRIMARY KEY (`id`),
   KEY `sale_id` (`sale_id`),
   CONSTRAINT `transactions_ibfk_1` FOREIGN KEY (`sale_id`) REFERENCES `sales` (`id`) ON DELETE RESTRICT ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -481,7 +488,7 @@ CREATE TABLE `transactions` (
 
 LOCK TABLES `transactions` WRITE;
 /*!40000 ALTER TABLE `transactions` DISABLE KEYS */;
-INSERT INTO `transactions` VALUES (29,39,'Cash',2104.60,'2025-03-14 18:42:49','2025-04-23 19:47:01'),(30,40,'Cash',161.05,'2025-03-14 18:42:56','2025-04-23 19:47:01'),(31,41,'Cash',876.93,'2025-03-14 18:43:19','2025-04-23 19:47:01'),(32,42,'Cash',3288.48,'2025-03-14 18:43:39','2025-04-23 19:47:01'),(33,43,'Cash',322.10,'2025-03-14 18:43:48','2025-04-23 19:47:01'),(34,44,'Cash',1578.50,'2025-03-15 16:27:26','2025-04-23 19:47:01'),(35,52,'Cash',1210.00,'2025-03-15 17:05:47','2025-04-23 19:47:01'),(36,59,'Cash',219.30,'2025-03-17 13:52:02','2025-04-23 19:47:01'),(37,63,'Cash',526.15,'2025-04-23 19:49:34','2025-04-23 19:50:06');
+INSERT INTO `transactions` VALUES (38,64,'Cash',226.00,'2025-05-09 23:41:58','2025-05-09 23:41:58'),(39,65,'Cash',1130.00,'2025-05-09 23:43:04','2025-05-09 23:43:04'),(40,66,'Cash',904.00,'2025-05-09 23:53:37','2025-05-09 23:53:37'),(41,67,'Cash',405.00,'2025-05-09 23:54:27','2025-05-09 23:54:27');
 /*!40000 ALTER TABLE `transactions` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -505,7 +512,7 @@ CREATE TABLE `users` (
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -514,7 +521,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'Emman',NULL,'Nieva','admin','ert','123',NULL,NULL,'2025-04-23 11:37:34','2025-04-25 13:56:15'),(2,'Leo',NULL,'Non','leo','leo@gmail.com','123',NULL,NULL,'2025-04-25 13:56:15','2025-04-25 13:56:15');
+INSERT INTO `users` VALUES (1,'Emman',NULL,'Nieva','admin','admin@gmail.com','123','First Pet\'s Name','Browny','2025-04-23 11:37:34','2025-05-09 15:12:53'),(4,'Test',NULL,'Test','test','test@gmail.com','123',NULL,NULL,'2025-05-09 14:08:18','2025-05-09 15:12:27'),(6,'ee',NULL,'44','admin1','admin1@gmail.com','123',NULL,NULL,'2025-05-09 15:26:44','2025-05-09 15:28:52'),(7,'ee',NULL,'ee','admin2','admin2@gmail.com','123',NULL,NULL,'2025-05-09 15:31:55','2025-05-09 15:33:19');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1098,4 +1105,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-04-25 23:01:38
+-- Dump completed on 2025-05-09 23:55:54
