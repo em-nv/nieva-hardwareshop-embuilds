@@ -221,6 +221,12 @@
     <Compile Include="pages\SupplierAdd.Designer.cs">
       <DependentUpon>SupplierAdd.cs</DependentUpon>
     </Compile>
+    <Compile Include="pages\SupplierEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pages\SupplierEdit.Designer.cs">
+      <DependentUpon>SupplierEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="pages\Suppliers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -303,6 +309,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="pages\SupplierAdd.resx">
       <DependentUpon>SupplierAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pages\SupplierEdit.resx">
+      <DependentUpon>SupplierEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="pages\Suppliers.resx">
       <DependentUpon>Suppliers.cs</DependentUpon>
