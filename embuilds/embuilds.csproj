@@ -66,6 +66,7 @@
     <Reference Include="System.Diagnostics.DiagnosticSource, Version=8.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Diagnostics.DiagnosticSource.8.0.1\lib\net462\System.Diagnostics.DiagnosticSource.dll</HintPath>
     </Reference>
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.IO.Pipelines, Version=5.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.IO.Pipelines.5.0.2\lib\net461\System.IO.Pipelines.dll</HintPath>
     </Reference>
@@ -135,6 +136,12 @@
     </Compile>
     <Compile Include="pages\Inventory.Designer.cs">
       <DependentUpon>Inventory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="pages\InventoryProductAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pages\InventoryProductAdd.Designer.cs">
+      <DependentUpon>InventoryProductAdd.cs</DependentUpon>
     </Compile>
     <Compile Include="pages\Menu.cs">
       <SubType>Form</SubType>
@@ -245,6 +252,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="pages\Inventory.resx">
       <DependentUpon>Inventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pages\InventoryProductAdd.resx">
+      <DependentUpon>InventoryProductAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="pages\MyAccount.resx">
       <DependentUpon>MyAccount.cs</DependentUpon>

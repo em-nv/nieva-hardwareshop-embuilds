@@ -11,76 +11,22 @@ using MySql.Data.MySqlClient;
 
 namespace embuilds.pages
 {
-    public partial class ProductAdd : Form
+    public partial class InventoryProductAdd : Form
     {
         conn_DB db = new conn_DB();
-        public ProductAdd()
+        public InventoryProductAdd()
         {
             InitializeComponent();
         }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            Products products = new Products();
-            products.Show();
-            this.Hide();
+            Inventory inventory = new Inventory();
+            inventory.Show();
+            this.Close();
         }
 
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ProductAdd_Load(object sender, EventArgs e)
-        {
-            comboBoxCategory.DropDownStyle = ComboBoxStyle.DropDownList;
-
-            // Load Categories from MySQL
-            DataTable categories = db.GetAllProductCategories();
-            DataRow categoryRow = categories.NewRow();
-            categoryRow["ID"] = 0;
-            categoryRow["Category Name"] = "- Select Category -";
-            categories.Rows.InsertAt(categoryRow, 0);
-            comboBoxCategory.DataSource = categories;
-            comboBoxCategory.DisplayMember = "Category Name";
-            comboBoxCategory.ValueMember = "ID";
-
-            comboBoxSupplier.DropDownStyle = ComboBoxStyle.DropDownList;
-            // Load Suppliers from MySQL
-            DataTable suppliers = db.GetAllSuppliers();
-            DataRow supplierRow = suppliers.NewRow();
-            supplierRow["id"] = 0;
-            supplierRow["Supplier Name"] = "- Select Supplier -";
-            suppliers.Rows.InsertAt(supplierRow, 0);
-            comboBoxSupplier.DataSource = suppliers;
-            comboBoxSupplier.DisplayMember = "Supplier Name";
-            comboBoxSupplier.ValueMember = "id";
-
-
-        }
-
-        private void buttonIncrease_Click(object sender, EventArgs e)
-        {
-            int quantity = 0;
-            int.TryParse(textBoxQuantity.Text, out quantity);
-            quantity++;
-            textBoxQuantity.Text = quantity.ToString();
-        }
-
-        private void buttonDecrease_Click(object sender, EventArgs e)
-        {
-            int quantity = 0;
-            int.TryParse(textBoxQuantity.Text, out quantity);
-            if (quantity > 0) quantity--; // Prevent going below 0
-            textBoxQuantity.Text = quantity.ToString();
-        }
-
-        private void buttonSave_Click(object sender, EventArgs e)
+        private void btnSave_Click(object sender, EventArgs e)
         {
             // Get values from form controls
             string name = textBoxProductName.Text.Trim();
@@ -160,9 +106,9 @@ namespace embuilds.pages
                     transaction.Commit();
                     MessageBox.Show("Product saved successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    // Redirect to Products form
-                    Products products = new Products();
-                    products.Show();
+                    // Redirect to Inventory form
+                    Inventory inventory = new Inventory();
+                    inventory.Show();
                     this.Hide();
                 }
                 catch (Exception ex)
@@ -173,6 +119,46 @@ namespace embuilds.pages
             }
         }
 
+        private void InventoryProductAdd_Load(object sender, EventArgs e)
+        {
+            comboBoxCategory.DropDownStyle = ComboBoxStyle.DropDownList;
 
+            // Load Categories from MySQL
+            DataTable categories = db.GetAllProductCategories();
+            DataRow categoryRow = categories.NewRow();
+            categoryRow["ID"] = 0;
+            categoryRow["Category Name"] = "- Select Category -";
+            categories.Rows.InsertAt(categoryRow, 0);
+            comboBoxCategory.DataSource = categories;
+            comboBoxCategory.DisplayMember = "Category Name";
+            comboBoxCategory.ValueMember = "ID";
+
+            comboBoxSupplier.DropDownStyle = ComboBoxStyle.DropDownList;
+            // Load Suppliers from MySQL
+            DataTable suppliers = db.GetAllSuppliers();
+            DataRow supplierRow = suppliers.NewRow();
+            supplierRow["id"] = 0;
+            supplierRow["Supplier Name"] = "- Select Supplier -";
+            suppliers.Rows.InsertAt(supplierRow, 0);
+            comboBoxSupplier.DataSource = suppliers;
+            comboBoxSupplier.DisplayMember = "Supplier Name";
+            comboBoxSupplier.ValueMember = "id";
+        }
+
+        private void buttonDecrease_Click(object sender, EventArgs e)
+        {
+            int quantity = 0;
+            int.TryParse(textBoxQuantity.Text, out quantity);
+            if (quantity > 0) quantity--; // Prevent going below 0
+            textBoxQuantity.Text = quantity.ToString();
+        }
+
+        private void buttonIncrease_Click(object sender, EventArgs e)
+        {
+            int quantity = 0;
+            int.TryParse(textBoxQuantity.Text, out quantity);
+            quantity++;
+            textBoxQuantity.Text = quantity.ToString();
+        }
     }
 }

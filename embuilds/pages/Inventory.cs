@@ -35,5 +35,12 @@ namespace embuilds.pages
             dataGridInventory.DataSource = conn_db.GetAllInventory();
             dataGridInventory.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
+
+        private void btnAddNewProduct_Click(object sender, EventArgs e)
+        {
+            InventoryProductAdd inventoryProductAdd = new InventoryProductAdd();
+            inventoryProductAdd.Show();
+            this.Hide();
+        }
     }
 }
