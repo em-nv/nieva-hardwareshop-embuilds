@@ -88,9 +88,18 @@ namespace embuilds.pages
             if (string.IsNullOrWhiteSpace(textBoxFirstName.Text) ||
                 string.IsNullOrWhiteSpace(textBoxLastName.Text) ||
                 string.IsNullOrWhiteSpace(textBoxPhoneNumber.Text) ||
-                string.IsNullOrWhiteSpace(textBoxAddress.Text)) // fixed closing parenthesis
+                string.IsNullOrWhiteSpace(textBoxAddress.Text))
             {
                 MessageBox.Show("Please fill in all required fields.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            string phoneNumber = textBoxPhoneNumber.Text.Trim();
+
+            // Mobile number validation
+            if (!IsValidMobileNumber(phoneNumber))
+            {
+                MessageBox.Show("Invalid mobile number. Please enter a valid 10-digit mobile number.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -101,24 +110,41 @@ namespace embuilds.pages
                 {
                     conn.Open();
 
+                    // Check if the mobile number already exists (except for the current customer)
+                    string phoneCheckQuery = "SELECT COUNT(*) FROM customers WHERE phone_number = @checkPhoneNumber AND id != @currentId";
+                    using (MySqlCommand checkPhoneCmd = new MySqlCommand(phoneCheckQuery, conn))
+                    {
+                        checkPhoneCmd.Parameters.AddWithValue("@checkPhoneNumber", phoneNumber);
+                        checkPhoneCmd.Parameters.AddWithValue("@currentId", CustomerId);  // Ensure CustomerId is set
+
+                        long phoneCount = (long)checkPhoneCmd.ExecuteScalar();
+
+                        if (phoneCount > 0)
+                        {
+                            MessageBox.Show("The mobile number already exists. Please use a different mobile number.", "Duplicate Mobile Number", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
+                    }
+
+                    // Proceed to update customer
                     string query = @"
-                UPDATE customers
-                SET first_name = @first_name,
-                    middle_name = @middle_name,
-                    last_name = @last_name,
-                    phone_number = @phone_number,
-                    address = @address,
-                    updated_at = NOW()
-                WHERE id = @id";
+        UPDATE customers
+        SET first_name = @first_name,
+            middle_name = @middle_name,
+            last_name = @last_name,
+            phone_number = @phone_number,
+            address = @address,
+            updated_at = NOW()
+        WHERE id = @id";
 
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@first_name", textBoxFirstName.Text.Trim());
                         cmd.Parameters.AddWithValue("@middle_name", string.IsNullOrWhiteSpace(textBoxMiddleName.Text) ? DBNull.Value : (object)textBoxMiddleName.Text.Trim());
                         cmd.Parameters.AddWithValue("@last_name", textBoxLastName.Text.Trim());
-                        cmd.Parameters.AddWithValue("@phone_number", textBoxPhoneNumber.Text.Trim());
+                        cmd.Parameters.AddWithValue("@phone_number", phoneNumber);
                         cmd.Parameters.AddWithValue("@address", textBoxAddress.Text.Trim());
-                        cmd.Parameters.AddWithValue("@id", CustomerId); // Make sure UserId is defined and set
+                        cmd.Parameters.AddWithValue("@id", CustomerId); // Ensure CustomerId is defined and set
 
                         int rowsAffected = cmd.ExecuteNonQuery();
                         if (rowsAffected > 0)
@@ -141,6 +167,14 @@ namespace embuilds.pages
                                 "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        // Helper method to validate mobile number format (example: 11 digits only)
+        private bool IsValidMobileNumber(string phoneNumber)
+        {
+            // Check if the phone number contains only digits and is exactly 11 digits long
+            return phoneNumber.All(char.IsDigit) && phoneNumber.Length == 11;
+        }
+
 
     }
 }

@@ -104,16 +104,49 @@ namespace embuilds.pages
                 {
                     conn.Open();
 
+                    // Check if the email is already used by another user
+                    string emailCheckQuery = "SELECT COUNT(*) FROM users WHERE email = @checkEmail AND id != @currentId";
+                    using (MySqlCommand checkEmailCmd = new MySqlCommand(emailCheckQuery, conn))
+                    {
+                        checkEmailCmd.Parameters.AddWithValue("@checkEmail", textBoxEmail.Text.Trim());
+                        checkEmailCmd.Parameters.AddWithValue("@currentId", UserId);
+
+                        long emailCount = (long)checkEmailCmd.ExecuteScalar();
+
+                        if (emailCount > 0)
+                        {
+                            MessageBox.Show("The email already exists. Please use a different email.", "Duplicate Email", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
+                    }
+
+                    // Check if the username is already used by another user
+                    string usernameCheckQuery = "SELECT COUNT(*) FROM users WHERE username = @checkUsername AND id != @currentId";
+                    using (MySqlCommand checkUsernameCmd = new MySqlCommand(usernameCheckQuery, conn))
+                    {
+                        checkUsernameCmd.Parameters.AddWithValue("@checkUsername", textBoxUserName.Text.Trim());
+                        checkUsernameCmd.Parameters.AddWithValue("@currentId", UserId);
+
+                        long usernameCount = (long)checkUsernameCmd.ExecuteScalar();
+
+                        if (usernameCount > 0)
+                        {
+                            MessageBox.Show("The username already exists. Please use a different username.", "Duplicate Username", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
+                    }
+
+                    // Proceed to update user
                     string query = @"
-                UPDATE users
-                SET first_name = @first_name,
-                    middle_name = @middle_name,
-                    last_name = @last_name,
-                    username = @username,
-                    email = @email,
-                    password = @password,
-                    updated_at = NOW()
-                WHERE id = @id";
+        UPDATE users
+        SET first_name = @first_name,
+            middle_name = @middle_name,
+            last_name = @last_name,
+            username = @username,
+            email = @email,
+            password = @password,
+            updated_at = NOW()
+        WHERE id = @id";
 
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
@@ -123,7 +156,7 @@ namespace embuilds.pages
                         cmd.Parameters.AddWithValue("@username", textBoxUserName.Text.Trim());
                         cmd.Parameters.AddWithValue("@email", textBoxEmail.Text.Trim());
                         cmd.Parameters.AddWithValue("@password", textBoxPassword.Text.Trim());
-                        cmd.Parameters.AddWithValue("@id", UserId); // Make sure UserId is defined and set
+                        cmd.Parameters.AddWithValue("@id", UserId); // Ensure UserId is correctly set
 
                         int rowsAffected = cmd.ExecuteNonQuery();
                         if (rowsAffected > 0)
@@ -146,5 +179,7 @@ namespace embuilds.pages
                                 "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+
     }
 }

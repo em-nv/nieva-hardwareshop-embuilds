@@ -213,6 +213,7 @@
             this.Name = "UserAdd";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add New System User";
+            this.Load += new System.EventHandler(this.UserAdd_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

@@ -52,6 +52,12 @@ namespace embuilds.pages
                 return;
             }
 
+            if (!IsValidPhoneNumber(phoneNumber))
+            {
+                MessageBox.Show("Invalid Phone Number format. Please enter a 10-digit phone number.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             if (string.IsNullOrEmpty(address))
             {
                 MessageBox.Show("Address is required.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -65,11 +71,27 @@ namespace embuilds.pages
                 {
                     conn.Open();
 
+                    // Check if the phone number is already used by another customer
+                    string phoneCheckQuery = "SELECT COUNT(*) FROM customers WHERE phone_number = @checkPhoneNumber";
+                    using (MySqlCommand checkPhoneCmd = new MySqlCommand(phoneCheckQuery, conn))
+                    {
+                        checkPhoneCmd.Parameters.AddWithValue("@checkPhoneNumber", phoneNumber);
+
+                        long phoneCount = (long)checkPhoneCmd.ExecuteScalar();
+
+                        if (phoneCount > 0)
+                        {
+                            MessageBox.Show("The phone number already exists. Please use a different phone number.", "Duplicate Phone Number", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
+                    }
+
+                    // Proceed to insert customer
                     string query = @"
-                INSERT INTO customers 
-                    (first_name, middle_name, last_name, phone_number, address, created_at, updated_at)
-                VALUES 
-                    (@firstName, @middleName, @lastName, @phoneNumber, @address, NOW(), NOW());";
+        INSERT INTO customers 
+            (first_name, middle_name, last_name, phone_number, address, created_at, updated_at)
+        VALUES 
+            (@firstName, @middleName, @lastName, @phoneNumber, @address, NOW(), NOW());";
 
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
@@ -102,5 +124,17 @@ namespace embuilds.pages
             }
         }
 
+        // Helper method to validate phone number format (example: 11 digits only)
+        private bool IsValidPhoneNumber(string phoneNumber)
+        {
+            // A simple validation to check for a 11-digit phone number
+            return phoneNumber.All(char.IsDigit) && phoneNumber.Length == 11;
+        }
+
+
+        private void CustomerAdd_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

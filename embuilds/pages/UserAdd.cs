@@ -35,33 +35,13 @@ namespace embuilds.pages
             string password = textBoxPassword.Text.Trim();
 
             // Validate required fields
-            if (string.IsNullOrEmpty(firstName))
+            if (string.IsNullOrEmpty(firstName) ||
+                string.IsNullOrEmpty(lastName) ||
+                string.IsNullOrEmpty(username) ||
+                string.IsNullOrEmpty(email) ||
+                string.IsNullOrEmpty(password))
             {
-                MessageBox.Show("First Name is required.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            if (string.IsNullOrEmpty(lastName))
-            {
-                MessageBox.Show("Last Name is required.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            if (string.IsNullOrEmpty(username))
-            {
-                MessageBox.Show("Username is required.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            if (string.IsNullOrEmpty(email))
-            {
-                MessageBox.Show("Email is required.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            if (string.IsNullOrEmpty(password))
-            {
-                MessageBox.Show("Password is required.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("All fields except Middle Name are required.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -72,13 +52,42 @@ namespace embuilds.pages
                 {
                     conn.Open();
 
-                    string query = @"
-                INSERT INTO users 
-                    (first_name, middle_name, last_name, username, email, password, reset_question, reset_answer, created_at, updated_at)
-                VALUES 
-                    (@firstName, @middleName, @lastName, @username, @email, @password, NULL, NULL, NOW(), NOW());";
+                    // Check if email already exists
+                    string checkEmailQuery = "SELECT COUNT(*) FROM users WHERE email = @checkEmail";
+                    using (MySqlCommand checkCmd = new MySqlCommand(checkEmailQuery, conn))
+                    {
+                        checkCmd.Parameters.AddWithValue("@checkEmail", email);
+                        long count = (long)checkCmd.ExecuteScalar();
 
-                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                        if (count > 0)
+                        {
+                            MessageBox.Show("The email already exists. Please use a different email.", "Duplicate Email", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
+                    }
+
+                    // Check if username already exists
+                    string checkUsernameQuery = "SELECT COUNT(*) FROM users WHERE username = @checkUsername";
+                    using (MySqlCommand checkCmd = new MySqlCommand(checkUsernameQuery, conn))
+                    {
+                        checkCmd.Parameters.AddWithValue("@checkUsername", username);
+                        long count = (long)checkCmd.ExecuteScalar();
+
+                        if (count > 0)
+                        {
+                            MessageBox.Show("The username already exists. Please use a different username.", "Duplicate Username", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
+                    }
+
+                    // Insert new user
+                    string insertQuery = @"
+        INSERT INTO users 
+            (first_name, middle_name, last_name, username, email, password, reset_question, reset_answer, created_at, updated_at)
+        VALUES 
+            (@firstName, @middleName, @lastName, @username, @email, @password, NULL, NULL, NOW(), NOW());";
+
+                    using (MySqlCommand cmd = new MySqlCommand(insertQuery, conn))
                     {
                         cmd.Parameters.AddWithValue("@firstName", firstName);
                         cmd.Parameters.AddWithValue("@middleName", string.IsNullOrEmpty(middleName) ? DBNull.Value : (object)middleName);
@@ -100,6 +109,7 @@ namespace embuilds.pages
                     textBoxEmail.Clear();
                     textBoxPassword.Clear();
                 }
+
                 Users users = new Users();
                 users.Show();
                 this.Hide();
@@ -110,5 +120,11 @@ namespace embuilds.pages
             }
         }
 
+
+
+        private void UserAdd_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
