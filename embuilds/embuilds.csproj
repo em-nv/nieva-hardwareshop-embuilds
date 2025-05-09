@@ -113,6 +113,12 @@
     <Compile Include="pages\CustomerAdd.Designer.cs">
       <DependentUpon>CustomerAdd.cs</DependentUpon>
     </Compile>
+    <Compile Include="pages\CustomerEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pages\CustomerEdit.Designer.cs">
+      <DependentUpon>CustomerEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="pages\Customers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -264,6 +270,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="pages\CustomerAdd.resx">
       <DependentUpon>CustomerAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pages\CustomerEdit.resx">
+      <DependentUpon>CustomerEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="pages\Customers.resx">
       <DependentUpon>Customers.cs</DependentUpon>
