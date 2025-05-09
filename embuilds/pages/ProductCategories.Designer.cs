@@ -93,7 +93,7 @@
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "ProductCategories";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ProductCategories";
+            this.Text = "Product Categories";
             this.Load += new System.EventHandler(this.frmProductCategories_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridProductCategories)).EndInit();
             this.ResumeLayout(false);
