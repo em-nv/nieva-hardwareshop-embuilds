@@ -143,6 +143,12 @@
     <Compile Include="pages\InventoryProductAdd.Designer.cs">
       <DependentUpon>InventoryProductAdd.cs</DependentUpon>
     </Compile>
+    <Compile Include="pages\InventoryProductEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pages\InventoryProductEdit.Designer.cs">
+      <DependentUpon>InventoryProductEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="pages\Menu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -261,6 +267,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="pages\InventoryProductAdd.resx">
       <DependentUpon>InventoryProductAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pages\InventoryProductEdit.resx">
+      <DependentUpon>InventoryProductEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="pages\MyAccount.resx">
       <DependentUpon>MyAccount.cs</DependentUpon>

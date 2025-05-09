@@ -2,30 +2,25 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Org.BouncyCastle.Asn1.Cmp;
-using System.Xml.Linq;
 using MySql.Data.MySqlClient;
 
 namespace embuilds.pages
 {
-    public partial class ProductEdit : Form
+    public partial class InventoryProductEdit : Form
     {
         conn_DB db = new conn_DB();
-
         public int ProductId { get; set; }
-
-        public ProductEdit()
+        public InventoryProductEdit()
         {
             InitializeComponent();
         }
 
-        private void ProductEdit_Load(object sender, EventArgs e)
+        private void InventoryProductEdit_Load(object sender, EventArgs e)
         {
             comboBoxCategory.DropDownStyle = ComboBoxStyle.DropDownList;
 
@@ -54,7 +49,6 @@ namespace embuilds.pages
             {
                 LoadProductDetails();
             }
-
         }
 
         private void LoadProductDetails()
@@ -108,9 +102,25 @@ namespace embuilds.pages
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            Products products = new Products();
-            products.Show();
+            Inventory inventory = new Inventory();
+            inventory.Show();
             this.Hide();
+        }
+
+        private void buttonIncrease_Click(object sender, EventArgs e)
+        {
+            int quantity = 0;
+            int.TryParse(textBoxQuantity.Text, out quantity);
+            quantity++;
+            textBoxQuantity.Text = quantity.ToString();
+        }
+
+        private void buttonDecrease_Click(object sender, EventArgs e)
+        {
+            int quantity = 0;
+            int.TryParse(textBoxQuantity.Text, out quantity);
+            if (quantity > 0) quantity--; // Prevent going below 0
+            textBoxQuantity.Text = quantity.ToString();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -173,8 +183,8 @@ namespace embuilds.pages
 
                     MessageBox.Show("Product updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    Products products = new Products();
-                    products.Show();
+                    Inventory inventory = new Inventory();
+                    inventory.Show();
                     this.Hide();
                 }
             }
@@ -182,22 +192,6 @@ namespace embuilds.pages
             {
                 MessageBox.Show("An error occurred while saving the product:\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private void buttonDecrease_Click(object sender, EventArgs e)
-        {
-            int quantity = 0;
-            int.TryParse(textBoxQuantity.Text, out quantity);
-            if (quantity > 0) quantity--; // Prevent going below 0
-            textBoxQuantity.Text = quantity.ToString();
-        }
-
-        private void buttonIncrease_Click(object sender, EventArgs e)
-        {
-            int quantity = 0;
-            int.TryParse(textBoxQuantity.Text, out quantity);
-            quantity++;
-            textBoxQuantity.Text = quantity.ToString();
         }
     }
 }
