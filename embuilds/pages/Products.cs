@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Org.BouncyCastle.Bcpg;
 
 namespace embuilds.pages
 {
@@ -65,14 +66,14 @@ namespace embuilds.pages
                     // Safely extract ProductID (make sure column name matches your data)
                     if (selectedRow.Cells["id"].Value != null) // Ensure "id" matches your column name
                     {
-                        int productId = Convert.ToInt32(selectedRow.Cells["id"].Value);
+                        int userId = Convert.ToInt32(selectedRow.Cells["id"].Value);
 
-                        // Use the conn_DB class to create a new instance of the ProductEdit form
-                        ProductEdit productEdit = new ProductEdit();
-                        productEdit.ProductId = productId; // Pass the ProductId to the ProductEdit form
+
+                        UserEdit userEdit = new UserEdit();
+                        userEdit.UserId = userId;
                         this.Hide();
 
-                        productEdit.ShowDialog(); // Open the ProductEdit form modally
+                        userEdit.ShowDialog(); // Open the ProductEdit form modally
                     }
                     else
                     {
