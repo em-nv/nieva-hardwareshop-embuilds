@@ -106,7 +106,7 @@ namespace embuilds.pages
             string templatePath = Application.StartupPath + @"\reportTemplate\ProductList.xlsx";
             DateTime now = DateTime.Now;
             string mydate = now.ToString("yyyy-mm-dd-hh-mm-ss");
-            string newFilePath = Application.StartupPath + @"\generatedreports\report-" + mydate + ".xlsx";
+            string newFilePath = Application.StartupPath + @"\generatedreports\ProductReport-" + mydate + ".xlsx";
 
             // Create directory if it doesn't exist
             if (!Directory.Exists(Application.StartupPath + @"\generatedreports"))
