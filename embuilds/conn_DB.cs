@@ -139,21 +139,32 @@ namespace embuilds
             {
                 conn.Open();
                 var query = @"
-                    SELECT 
-                        sa.id AS `ID`,
-                        COALESCE(CONCAT(c.first_name, ' ', c.middle_name, ' ', c.last_name), '') AS `Customer Name`,
-                        p.name AS `Product Name`,
-                        sa.quantity AS `Quantity`,
-                        CONCAT('Php ', FORMAT(sa.total_price, 2)) AS `Total Price`
-                    FROM sales sa
-                    LEFT JOIN customers c ON sa.customer_id = c.id
-                    JOIN products p ON sa.product_id = p.id";
+            SELECT 
+                sa.id AS `ID`,
+                CASE 
+                    WHEN sa.customer_id IS NULL THEN 'Walk-in Customer'
+                    WHEN c.id IS NULL THEN 'Customer Deleted'
+                    ELSE CONCAT(
+                        c.first_name, 
+                        IF(c.middle_name IS NULL OR c.middle_name = '', '', CONCAT(' ', c.middle_name)),
+                        ' ', 
+                        c.last_name
+                    ) 
+                END AS `Customer Name`,
+                p.name AS `Product Name`,
+                sa.quantity AS `Quantity`,
+                CONCAT('₱', FORMAT(sa.total_price, 2)) AS `Total Price`,
+                sa.created_at AS `Date`
+            FROM sales sa
+            LEFT JOIN customers c ON sa.customer_id = c.id
+            JOIN products p ON sa.product_id = p.id
+            ORDER BY sa.created_at DESC";
 
-                MySqlCommand cmd = new MySqlCommand(query, conn);
-                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
-                adapter.Fill(dt);
-                conn.Close();
-
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                    adapter.Fill(dt);
+                }
             }
             return dt;
         }

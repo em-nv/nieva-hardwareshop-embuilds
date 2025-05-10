@@ -35,5 +35,12 @@ namespace embuilds.pages
             dataGridSales.DataSource = conn_db.GetAllSales();
             dataGridSales.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
+
+        private void btnAddSales_Click(object sender, EventArgs e)
+        {
+            SalesAdd1 salesAdd1 = new SalesAdd1();
+            salesAdd1.Show();
+            this.Hide();
+        }
     }
 }

@@ -227,6 +227,18 @@
     <Compile Include="pages\Sales.Designer.cs">
       <DependentUpon>Sales.cs</DependentUpon>
     </Compile>
+    <Compile Include="pages\SalesAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pages\SalesAdd.Designer.cs">
+      <DependentUpon>SalesAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="pages\SalesAdd1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pages\SalesAdd1.Designer.cs">
+      <DependentUpon>SalesAdd1.cs</DependentUpon>
+    </Compile>
     <Compile Include="pages\SecurityQuestion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -342,6 +354,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="pages\Sales.resx">
       <DependentUpon>Sales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pages\SalesAdd.resx">
+      <DependentUpon>SalesAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pages\SalesAdd1.resx">
+      <DependentUpon>SalesAdd1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="pages\SecurityQuestion.resx">
       <DependentUpon>SecurityQuestion.cs</DependentUpon>
