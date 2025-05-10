@@ -163,29 +163,32 @@ namespace embuilds.pages
                 workbook.PrintPreview();
 
                 MessageBox.Show("Report exported successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Products products = new Products();
+                products.Show();
+                this.Hide();
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Export failed: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            finally
-            {
-                // Cleanup COM objects
-                if (workbook != null)
-                {
-                    workbook.Close(false);
-                    System.Runtime.InteropServices.Marshal.ReleaseComObject(workbook);
-                }
-                if (excelApp != null)
-                {
-                    excelApp.Quit();
-                    System.Runtime.InteropServices.Marshal.ReleaseComObject(excelApp);
-                }
-                if (worksheet != null)
-                {
-                    System.Runtime.InteropServices.Marshal.ReleaseComObject(worksheet);
-                }
-            }
+            //finally
+            //{
+            //    // Cleanup COM objects
+            //    if (workbook != null)
+            //    {
+            //        workbook.Close(false);
+            //        System.Runtime.InteropServices.Marshal.ReleaseComObject(workbook);
+            //    }
+            //    if (excelApp != null)
+            //    {
+            //        excelApp.Quit();
+            //        System.Runtime.InteropServices.Marshal.ReleaseComObject(excelApp);
+            //    }
+            //    if (worksheet != null)
+            //    {
+            //        System.Runtime.InteropServices.Marshal.ReleaseComObject(worksheet);
+            //    }
+            //}
         }
     }
 }
