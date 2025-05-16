@@ -34,7 +34,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxNewPassword = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnBack = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,6 +68,7 @@
             this.textBoxConfirmNewPassword.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxConfirmNewPassword.Location = new System.Drawing.Point(36, 119);
             this.textBoxConfirmNewPassword.Name = "textBoxConfirmNewPassword";
+            this.textBoxConfirmNewPassword.PasswordChar = '●';
             this.textBoxConfirmNewPassword.Size = new System.Drawing.Size(288, 23);
             this.textBoxConfirmNewPassword.TabIndex = 6;
             // 
@@ -86,6 +87,7 @@
             this.textBoxNewPassword.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxNewPassword.Location = new System.Drawing.Point(36, 61);
             this.textBoxNewPassword.Name = "textBoxNewPassword";
+            this.textBoxNewPassword.PasswordChar = '●';
             this.textBoxNewPassword.Size = new System.Drawing.Size(288, 23);
             this.textBoxNewPassword.TabIndex = 4;
             // 
@@ -100,15 +102,16 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // button1
+            // btnBack
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(306, 203);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(68, 30);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "Back";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBack.Location = new System.Drawing.Point(306, 203);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(68, 30);
+            this.btnBack.TabIndex = 12;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btn_Click);
             // 
             // ResetPassword
             // 
@@ -117,7 +120,7 @@
             this.ClientSize = new System.Drawing.Size(386, 245);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnBack);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
@@ -139,6 +142,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxNewPassword;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnBack;
     }
 }

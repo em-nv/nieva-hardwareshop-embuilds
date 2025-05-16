@@ -86,6 +86,11 @@ namespace embuilds.pages
             }
         }
 
-
+        private void btnBack_Click_1(object sender, EventArgs e)
+        {
+            Login login = new Login();
+            login.Show();
+            this.Hide();
+        }
     }
 }

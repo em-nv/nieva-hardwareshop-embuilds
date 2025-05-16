@@ -12,6 +12,8 @@ namespace embuilds.pages
 {
     public partial class ResetPassword : Form
     {
+        private int userId;
+        private conn_DB db;
         public int UserId { get; set; }
         public ResetPassword()
         {
@@ -82,5 +84,11 @@ namespace embuilds.pages
             }
         }
 
+        private void btn_Click(object sender, EventArgs e)
+        {
+            SecurityQuestion securityQuestion = new SecurityQuestion(userId);
+            securityQuestion.Show();
+            this.Hide();
+        }
     }
 }

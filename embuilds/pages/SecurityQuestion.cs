@@ -21,6 +21,7 @@ namespace embuilds.pages
             InitializeComponent();
             this.userId = userId;
             this.db = new conn_DB();
+            comboBoxSecurityQuestions.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         private void btnBack_Click(object sender, EventArgs e)

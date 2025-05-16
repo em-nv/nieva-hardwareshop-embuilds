@@ -97,7 +97,7 @@
             this.comboBoxSecurityQuestions.Name = "comboBoxSecurityQuestions";
             this.comboBoxSecurityQuestions.Size = new System.Drawing.Size(202, 21);
             this.comboBoxSecurityQuestions.TabIndex = 1;
-            this.comboBoxSecurityQuestions.Text = "Filter";
+            this.comboBoxSecurityQuestions.Text = "Choose a Question";
             // 
             // button2
             // 
