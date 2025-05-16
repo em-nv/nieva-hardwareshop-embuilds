@@ -86,8 +86,8 @@ namespace embuilds.pages
 
         private void btn_Click(object sender, EventArgs e)
         {
-            SecurityQuestion securityQuestion = new SecurityQuestion(userId);
-            securityQuestion.Show();
+            ForgotPassword forgotPassword = new ForgotPassword();
+            forgotPassword.Show();
             this.Hide();
         }
     }

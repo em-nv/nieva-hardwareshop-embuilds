@@ -116,6 +116,7 @@ namespace embuilds.pages
                             ResetPassword resetPassword = new ResetPassword();
                             resetPassword.UserId = UserId;
                             resetPassword.Show();
+                            this.Hide();
 
 
 
