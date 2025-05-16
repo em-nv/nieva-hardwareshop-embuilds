@@ -220,7 +220,7 @@ namespace embuilds.pages
                 worksheet = (Excel.Worksheet)workbook.Worksheets[1];
 
                 int startRow = 9; // Starting row in Excel
-                int totalColumns = dgv.Columns.Count - 1; // Exclude last column
+                int totalColumns = dgv.Columns.Count - 2; // Exclude last column
 
                 // Export data (excluding last column)
                 foreach (DataGridViewRow row in dgv.Rows)

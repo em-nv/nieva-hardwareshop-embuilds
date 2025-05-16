@@ -202,7 +202,7 @@ namespace embuilds.pages
                 Excel.Workbook workbook = excelApp.Workbooks.Open(templatePath);
                 Excel.Worksheet worksheet = (Excel.Worksheet)workbook.Worksheets[1];
 
-                int startRow = 2;
+                int startRow = 9;
                 for (int i = 0; i < dgv.Columns.Count; i++)
                 {
                     worksheet.Cells[1, i + 1] = dgv.Columns[i].HeaderText;

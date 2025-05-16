@@ -212,7 +212,7 @@ namespace embuilds.pages
                     }
 
                     // Write data
-                    int rowIndex = 2; // Start from row 2 (below headers)
+                    int rowIndex = 9; // Start from row 2 (below headers)
                     foreach (DataGridViewRow row in dataGridUsers.Rows)
                     {
                         if (!row.IsNewRow)

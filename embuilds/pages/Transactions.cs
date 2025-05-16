@@ -78,7 +78,7 @@ namespace embuilds.pages
                 workbook = excelApp.Workbooks.Open(templatePath);
                 worksheet = (Excel.Worksheet)workbook.Worksheets[1];
 
-                int startRow = 2; // Starting row in Excel
+                int startRow = 9; // Starting row in Excel
                 int totalColumns = dgv.Columns.Count;
 
                 // Export data (excluding last column)
